@@ -4,7 +4,7 @@
 $nums = [1,2,3,4,5,6,7];
 $k = 3;
 
-rotate($nums,$k);
+quiz($nums,$k);
 print_r($nums); // output the result
 
 
@@ -12,11 +12,11 @@ print_r($nums); // output the result
 $nums = [-1,-100,3,99];
 $k = 2;
 
-rotate($nums,$k);
+quiz($nums,$k);
 print_r($nums); // output the result
 
 
-function rotate(&$nums,$k){
+function quiz(&$nums,$k){
     do{
         $pop = array_pop($nums); // get & delete the last number from $nums
         array_unshift($nums,$pop); // use $pop as the insert number
