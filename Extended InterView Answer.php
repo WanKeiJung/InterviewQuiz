@@ -1,23 +1,24 @@
 <?php
-
-
-$s = "is2 sentence4 This1 a3";
+$s = "Myself2 Me1 I4 and3";
 
 $new_s = explode(' ',$s);
 
-echo "<pre>";
-var_dump($new_s);
+//echo "<pre>";
+//var_dump($new_s);
 
+$data = [];
 
+for($i = 0; $i<count($new_s); $i++){
 
-
-foreach ($new_s as $new){
-
-    $result[] =  substr($new,0,-1); // 2 4 1 3
-
+    $result = preg_replace('/[0-9]+/', ' ', $new_s[$i]);
+    $data[substr($new_s[$i],-1)] =  $result;
 }
 
 
-sort($result);
-echo implode(' ', $result);
+ksort($data);
+
+for($i = 0; $i<count($data); $i++){
+    echo $data[$i+1];
+}
+
 
